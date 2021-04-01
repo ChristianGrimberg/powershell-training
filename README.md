@@ -21,9 +21,19 @@
     New-Alias -Name "List" -Value Get-ChildItem # Create an alias for a cmdlet
     ```
 
-* __Get-PSDrive__ and `Set-Location` Browse across drives:
+* __`Get-PSDrive` and `Set-Location`__ Browse across drives:
 
     ```powershell
     Get-PSDrive # Get a list of available drivers in the system
     Set-Location Env: # Change the drive to the Environments
+    ```
+
+* `Get-Module`
+
+    ```powershell
+    Get-Module # Get a list of imported modules in the system
+    Find-Module -Filter backup # Find a module with a filter
+    Install-Module -Name azurerm # Gets one or more modules that meet specified criteria from an online repository.
+    Import-Module -Name azurerm # Adds one or more modules to the current session
+    Remove-Module -Name azurerm # Removes the members of a module, such as cmdlets and functions
     ```
