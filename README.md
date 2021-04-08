@@ -1,10 +1,11 @@
-# Powershell essential training repository
+# PowerShell essential training repository
 
 ## Basic CmdLets
 
 * __`Get-Help`__ Getting help from all the Powershell CmdLets:
 
     ```powershell
+    Update-Help # Update the command's helpers included in PowerShell
     Get-Help * # Display available help articles
     Get-Help -Name Get-ChildItem # Display basic help information about a cmdlet
     Get-Help -Name Get-Process -Examples # Display cmdlet examples
