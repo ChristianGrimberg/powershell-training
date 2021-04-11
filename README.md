@@ -2,7 +2,7 @@
 
 ## Basic CmdLets
 
-* __`Get-Help`__ Getting help from all the Powershell CmdLets:
+* Getting help from all the Powershell CmdLets with __`Get-Help`__:
 
     ```powershell
     Update-Help # Update the command's helpers included in PowerShell
@@ -14,7 +14,7 @@
     Get-Help -Name New-PSSession -Parameter ComputerName # Display selected parts of a cmdlet by using parameters
     ```
 
-* __`Get-Alias` and `Set-Alias`__ Using Aliases with Powershell:
+* Using Aliases with __`Get-Alias` and `Set-Alias`__:
 
     ```powershell
     Get-Alias # Get all aliases in the current session
@@ -22,14 +22,14 @@
     New-Alias -Name "List" -Value Get-ChildItem # Create an alias for a cmdlet
     ```
 
-* __`Get-PSDrive` and `Set-Location`__ Browse across drives:
+* Browse across drives with __`Get-PSDrive` and `Set-Location`__:
 
     ```powershell
     Get-PSDrive # Get a list of available drivers in the system
     Set-Location Env: # Change the drive to the Environments
     ```
 
-* `Get-Module`
+* Manage PowerShell Modules with __`Get-Module`__:
 
     ```powershell
     Get-Module # Get a list of imported modules in the system
