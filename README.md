@@ -63,3 +63,14 @@
     Rename-Item -Path ./test/example.txt example2.txt # Rename the specific file or folder
     Remove-Item -Path ./test/example2.txt # Remove the file or folder without ask
     ```
+
+* Managing Operating System's Process
+
+    ```powershell
+    Get-Process # Get a entire list of running process in the operating system
+    Get-Process -Name Docker # Get a list of process named as specific name
+    Start-Process -FilePath ./process # Start a specific process located at specific path
+    Stop-Process -Id 1 # Stop the process with a specific Id
+    Stop-Process -Name Docker # Stop all the process with name Docker
+    Wait-Process -Id 1 # Waiting in the console until the process has stoped
+    ```
