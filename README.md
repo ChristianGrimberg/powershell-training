@@ -51,8 +51,15 @@
     Get-ChildItem -Path ./*.txt # Get a list filtering with a wildcard
     ```
 
-* Manipulating the content of files:
+* Manipulating files and folders:
 
     ```powershell
-    Get-Content -Path ./example.txt # Get file's content
+    New-Item -Name test -ItemType Directory # Create a new folder
+    New-Item -Name example.txt - ItemType File # Create a new file
+    Get-Content -Path ./test/example.txt # Get file's content
+    Set-Content -Path ./test/example.txt -Value "Writing values" # Write all the content of the specific file
+    Add-Content -Path ./test/example.txt -Value "Another values" # Add values to a specific file before a line break
+    Clear-Content -Path ./test/example.txt # Clear all the content of specific file
+    Rename-Item -Path ./test/example.txt example2.txt # Rename the specific file or folder
+    Remove-Item -Path ./test/example2.txt # Remove the file or folder without ask
     ```
