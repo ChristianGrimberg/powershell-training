@@ -114,6 +114,6 @@
 * Get info from Windows Management Instrumentation with __`Get-WmiObject`__:
 
     ```powershell
-    Get-WmiObject -Class Win32_DiskDrive # Get info about a WMI object
-    Get-WmiObject -Class Win32_Bios | Select-Object * # List all objects from specific WMI object
+    Get-WmiObject -Class Win32_DiskDrive # Get info about a WMI Class
+    Get-WmiObject -Class Win32_Bios | Select-Object * # List all objects from specific WMI Class
     ```
