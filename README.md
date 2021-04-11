@@ -34,7 +34,7 @@
 
     ```powershell
     Get-PSDrive # Get a list of available drivers in the system
-    Set-Location Env: # Change the drive to the Environments
+    Set-Location -Path Env: # Change the drive to the Environments
     ```
 
 * Manage PowerShell Modules:
@@ -97,4 +97,16 @@
     Suspend-Service -Name Winmgmt # Pause a specific Windows Service
     Resume-Service -Name Winmgmt # Play a paused Windows Service
     New-Service -Name Test -BinaryPathName ./service.exe # Create a new service with a specific binary file
+    ```
+
+* Working with Windows Registry:
+
+    ```powershell
+    Set-Location -Path HKLM:\SOFTWARE # Go the the specific Windows Registry Key
+    Get-ChildItem -Path ./ # List keys under the specific path
+    Get-ItemProperty -Path ./ # List values under a specific path
+    New-Item -Path ./ -Name Test # Create a new key on a specific Windows Registry path
+    New-ItemProperty -Path ./ -Name ValueName -Value example # Create a new value in the specific Windows Registry key
+    Remove-ItemProperty -Path ./ -Name ValueName # Delete a specific Windows Registry value
+    Remove-Item -Name Test # Delete a specific Windows Registry key
     ```
