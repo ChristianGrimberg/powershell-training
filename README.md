@@ -14,6 +14,14 @@
     Get-Help -Name New-PSSession -Parameter ComputerName # Display selected parts of a cmdlet by using parameters
     ```
 
+* Working with commands:
+
+    ```powershell
+    Get-Command # Get a list of available commands
+    Get-Command -Name Get-* # Get a list of commands filtering by a wildcard name
+    Get-Command -CommandType Function # Get a list of command by type
+    ```
+
 * Using Aliases:
 
     ```powershell
@@ -48,7 +56,7 @@
     Get-ChildItem -Directory # Get a list of folders only
     Get-ChildItem -File # Get a list of files only
     Get-Item -Path ./ # Get info about a specific folder or file
-    Get-ChildItem -Path ./*.txt # Get a list filtering with a wildcard
+    Get-ChildItem -Path ./*.txt # Get a list filtering by a wildcard
     ```
 
 * Manipulating files and folders:
@@ -64,7 +72,9 @@
     Remove-Item -Path ./test/example2.txt # Remove the file or folder without ask
     ```
 
-* Managing Operating System's Process
+## Managing Windows Operating System
+
+* Managing Operating System's Process:
 
     ```powershell
     Get-Process # Get a entire list of running process in the operating system
@@ -73,4 +83,18 @@
     Stop-Process -Id 1 # Stop the process with a specific Id
     Stop-Process -Name Docker # Stop all the process with name Docker
     Wait-Process -Id 1 # Waiting in the console until the process has stoped
+    ```
+
+* Managing Microsoft Windows Services:
+
+    ```powershell
+    Get-Service # Get a list of Windows Services
+    Get-Service -Name x* # Get a list of Windows Services filtering by a wildcard name
+    Get-Service | Select-Object * # Get a list of Windows Services with all their objects
+    Start-Service -Name SensorService # Run a specific Windows Service
+    Stop-Service -Name SensorService # Stop a specific Windows Service
+    Restart-Service -Name SensorService # Restart a specific Windows Service
+    Suspend-Service -Name Winmgmt # Pause a specific Windows Service
+    Resume-Service -Name Winmgmt # Play a paused Windows Service
+    New-Service -Name Test -BinaryPathName ./service.exe # Create a new service with a specific binary file
     ```
