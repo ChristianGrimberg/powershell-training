@@ -110,3 +110,10 @@
     Remove-ItemProperty -Path ./ -Name ValueName # Delete a specific Windows Registry value
     Remove-Item -Name Test # Delete a specific Windows Registry key
     ```
+
+* Get info from Windows Management Instrumentation with __`Get-WmiObject`__:
+
+    ```powershell
+    Get-WmiObject -Class Win32_DiskDrive # Get info about a WMI object
+    Get-WmiObject -Class Win32_Bios | Select-Object * # List all objects from specific WMI object
+    ```
