@@ -120,9 +120,13 @@
 
 ## Using object oriented sintax
 
-* Get properties from a object:
+* Get object properties and methods:
 
     ```powershell
     Get-Item -Path ./ | Select-Object * # Get all the properties on specific path
     Get-Process -Name Docker | Select-Object * # Get all the properties on specific process
+    Get-Item -Path ./ | Get-Member # Get all object members including proerties and methods
+    $folder = Get-Item -Path ./ # Storing the object into a variable
+    $folder.ToString() # For example, using a method of this object
+    $folder.CreationTime # For example, using a property of this object
     ```
