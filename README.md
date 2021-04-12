@@ -117,3 +117,12 @@
     Get-WmiObject -Class Win32_DiskDrive # Get info about a WMI Class
     Get-WmiObject -Class Win32_Bios | Select-Object * # List all objects from specific WMI Class
     ```
+
+## Using object oriented sintax
+
+* Get properties from a object:
+
+    ```powershell
+    Get-Item -Path ./ | Select-Object * # Get all the properties on specific path
+    Get-Process -Name Docker | Select-Object * # Get all the properties on specific process
+    ```
