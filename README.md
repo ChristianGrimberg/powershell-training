@@ -130,3 +130,13 @@
     $folder.ToString() # For example, using a method of this object
     $folder.CreationTime # For example, using a property of this object
     ```
+
+## Combine CmdLets in PowerShell
+
+* Using the pipe operator:
+    ```powershell
+    Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
+    Get-ChildItem -Path ./ | Sort-Object -Property Length # Example sorting in the specific path
+    Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" | Sort-Object -Property Length # Example combining two pipes
+    Get-ChildItem -Path ./ | Where-Object -Lenght -gt 200 # Example filtering by length
+    ```
