@@ -166,3 +166,12 @@
     Get-ChildItem -Path ./ | Measure-Object -Property Length -Maximum # Get the largest file on specific path
     Get-Content -Path ./file.txt | Measure-Object -Character -Line -Word # Get full statist of a file content
     ```
+
+* Select results using the pipeline:
+
+    ```powershell
+    Get-ChildItem -Path ./ | Select-Object -Property Name, Length, CreationTime # Get a list with specific property's columns
+    Get-Process | Select-Object -Unique # Get a process list with unique results
+    Get-ChildItem -Path ./ -File | Select-Object -Property Name, Length -First 5 # Get the first results with specific columns
+    Get-ChildItem -Path ./ -File | Sort-Object -Property Length | Select-Object -First 3 # Get the fists result with largest length
+    ```
