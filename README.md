@@ -131,12 +131,28 @@
     $folder.CreationTime # For example, using a property of this object
     ```
 
-## Combine CmdLets in PowerShell
+## Operate and combine CmdLets in PowerShell
 
-* Using the pipe operator:
+* Operators:
+
+    ```powershell
+    # -eq: equal
+    # -gt: greater than
+    # -lt: less than
+    # -like: like a
+    # -le: less or equal
+    # -ge: greater or equal
+    # -and: and
+    # -or: or
+    ```
+
+* Filtering and sorting returns:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
     Get-ChildItem -Path ./ | Sort-Object -Property Length # Example sorting in the specific path
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" | Sort-Object -Property Length # Example combining two pipes
-    Get-ChildItem -Path ./ | Where-Object -Lenght -gt 200 # Example filtering by length
+    Get-ChildItem -Path ./ | Where-Object -Property Length -gt 200 # Example filtering by length
+    Get-ChildItem -Path ./ | Where-Object -Property Name -eq "file.txt" # Example filtering with specific property
+    Get-ChildItem -Path ./ -File | Where-Object -Property Length -lt 10000 # Example filtering files by Length
+    Get-ChildItem -Path ./ -File | Where-Object {(($_.Name like "w*") -and ($_.Length -gt 300)) -or ($_.Extension -like ".txt")} # Example with multiple filtering
     ```
