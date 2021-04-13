@@ -131,7 +131,7 @@
     $folder.CreationTime # For example, using a property of this object
     ```
 
-## Operate and combine CmdLets in PowerShell
+## Combine operations with CmdLets in PowerShell
 
 * Operators:
 
@@ -146,7 +146,7 @@
     # -or: or
     ```
 
-* Filtering and sorting returns:
+* Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
     Get-ChildItem -Path ./ | Sort-Object -Property Length # Example sorting in the specific path
@@ -155,4 +155,14 @@
     Get-ChildItem -Path ./ | Where-Object -Property Name -eq "file.txt" # Example filtering with specific property
     Get-ChildItem -Path ./ -File | Where-Object -Property Length -lt 10000 # Example filtering files by Length
     Get-ChildItem -Path ./ -File | Where-Object {(($_.Name like "w*") -and ($_.Length -gt 300)) -or ($_.Extension -like ".txt")} # Example with multiple filtering
+    ```
+
+* Statistical results using the pipeline:
+
+    ```powershell
+    Get-ChildItem -Path ./ | Measure-Object # Get a general statist results
+    Get-ChildItem -Path ./ | Measure-Object -Property Length -Average # Get average of file's length on specific path
+    Get-ChildItem -Path ./ | Measure-Object -Property Length -Sum # Get the total length of all the objects in specific path
+    Get-ChildItem -Path ./ | Measure-Object -Property Length -Maximum # Get the largest file on specific path
+    Get-Content -Path ./file.txt | Measure-Object -Character -Line -Word # Get full statist of a file content
     ```
