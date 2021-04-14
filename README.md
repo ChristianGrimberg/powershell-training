@@ -155,6 +155,7 @@
     Get-ChildItem -Path ./ | Where-Object -Property Name -eq "file.txt" # Example filtering with specific property
     Get-ChildItem -Path ./ -File | Where-Object -Property Length -lt 10000 # Example filtering files by Length
     Get-ChildItem -Path ./ -File | Where-Object {(($_.Name like "w*") -and ($_.Length -gt 300)) -or ($_.Extension -like ".txt")} # Example with multiple filtering
+    Get-ChildItem -Path ./ | Sort-Object -Property Length -Descending # Order a list by length and descending
     ```
 
 * Statistical results using the pipeline:
