@@ -176,3 +176,17 @@
     Get-ChildItem -Path ./ -File | Select-Object -Property Name, Length -First 5 # Get the first results with specific columns
     Get-ChildItem -Path ./ -File | Sort-Object -Property Length | Select-Object -First 3 # Get the fists result with largest length
     ```
+
+* Format results:
+
+    ```powershell
+    # Concatenate string with variables
+    $var = "World"
+    Write-Host "Hello $var!"
+    Write-Host ("Hello {0}!" -f $var)
+    Write-Host ("Hello {0} {1}!" -f "cruel", $var)
+    $var = Get-Date
+    Write-Host ("The time is {0:HH:mm}" -f $var)
+    $var = 0.5
+    Write-Host ("The percent is {0:p}" -f $var)
+    ```
