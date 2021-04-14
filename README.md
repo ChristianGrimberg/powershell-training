@@ -199,3 +199,17 @@
     Get-ChildItem -Path ./ | Out-GridView # Show the results with graphic interface (only works on Windows)
     Get-ChildItem -Path ./ | Out-GridView -PassThru | Remove-Item # Remove selected item in graphical interface
     ```
+
+## Scripting with PowerShell
+
+* Using variables:
+
+    ```powershell
+    # View the variable type
+    $var = "Hello"
+    $var.GetType()
+    $var = 2
+    $var.GetType()
+    # Remove the variable
+    Remove-Variable var
+    ```
