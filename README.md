@@ -190,3 +190,12 @@
     $var = 0.5
     Write-Host ("The percent is {0:p}" -f $var)
     ```
+
+* Tables, lists and grid results:
+
+    ```powershell
+    Get-ChildItem -Path ./ | Format-Table -Property Name, Length # Results in table with specific columns
+    Get-ChildItem -Path ./ | Format-List -Property Name, Length # Results in a list with specific properties
+    Get-ChildItem -Path ./ | Out-GridView # Show the results with graphic interface (only works on Windows)
+    Get-ChildItem -Path ./ | Out-GridView -PassThru | Remove-Item # Remove selected item in graphical interface
+    ```
