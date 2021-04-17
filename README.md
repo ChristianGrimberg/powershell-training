@@ -213,3 +213,27 @@
     # Remove the variable
     Remove-Variable var
     ```
+
+* Using Lists:
+
+    ```powershell
+    # Load lists into variables
+    $var1 = 1,2,3
+    $var2 = "One", "Two", "Three"
+    # Access to specific value
+    $var1[0]
+    $var2[2]
+    $var1[0,2]
+    $var2 = $var2 + "Four"
+    $var2[-1] # Access to last load value
+    $var1[1..3] # Acces to a range of values
+    # Load a list with keys/values
+    $var = @{Name = "Chris"; LastName = "Grimberg"}
+    $var # See a table with the keys and values
+    $var.Name # Access to specific value from a key
+    # Load a variable with a objects return from a cmdlet
+    $var = Get-ChildItem -Path ./ # If you change a vale after that, it's not changing the objects in this variable
+    $var | Select-Object -Property Name # You can pipe the results
+    $var[0] # Access to the first object returns
+    $var[0].Name # Access to a specific Object's Property
+    ```
