@@ -245,7 +245,7 @@
     # Sintax of IF statements: if (condition) {execution}
     if (1 -eq 1) {Write-Host "This is a first test"}
     if ($true) {Write-Host "This is a second test"}
-    # Example 1: Indicate thats less than 10 objects
+    # Example 1: Indicate that there are less than 10 objects
     $var = Get-ChildItem -Path ./ | Measure-Object | Select-Object Count
     if ($var.Count -lt 10) {Write-Host "It's has less than 10 objects."}
     ```
