@@ -137,6 +137,7 @@
 
     ```powershell
     # -eq: equal
+    # -ne: not equal
     # -gt: greater than
     # -lt: less than
     # -like: like a
@@ -236,4 +237,15 @@
     $var | Select-Object -Property Name # You can pipe the results
     $var[0] # Access to the first object returns
     $var[0].Name # Access to a specific Object's Property
+    ```
+
+* Using IF statements:
+
+    ```powershell
+    # Sintax of IF statements: if (condition) {execution}
+    if (1 -eq 1) {Write-Host "This is a first test"}
+    if ($true) {Write-Host "This is a second test"}
+    # Example 1: Indicate thats less than 10 objects
+    $var = Get-ChildItem -Path ./ | Measure-Object | Select-Object Count
+    if ($var.Count -lt 10) {Write-Host "It's has less than 10 objects."}
     ```
