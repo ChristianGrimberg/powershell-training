@@ -251,3 +251,25 @@
     # Sintax of IF/ELSEIF/ELSE statements: if (condition) {execution} elseif (other condition) {other execution} else {final execution}
     if ($var.Count -lt 10) {Write-Host "It's less than 10"} elseif ($var.Count -eq 10) {Write-Host "It's 10"} else {Write-Host "It's greather than 10"}
     ```
+
+* Using SWITCH statements:
+
+    ```powershell
+    # Example: common use
+    $var = 3
+    switch ($var)
+    {
+        1 {Write-Host "One"}
+        2 {Write-Host "Two"}
+        3 {Write-Host "Three"}
+        default {Write-Host "Other number"} # Optional
+    }
+    # Example: using wildcards
+    $var = "Carl Sagan"
+    switch -Wildcard ($var)
+    {
+        "Carl*" {Write-Host "Carl is your name"; break} # break is optional
+        "*Sagan" {Write-Host "Sagan is your last name"}
+        default {Write-Host "Nice to meet you"}
+    }
+    ```
