@@ -248,4 +248,6 @@
     # Example 1: Indicate that there are less than 10 objects
     $var = Get-ChildItem -Path ./ | Measure-Object | Select-Object Count
     if ($var.Count -lt 10) {Write-Host "It has less than 10 objects."}
+    # Sintax of IF/ELSEIF/ELSE statements: if (condition) {execution} elseif (other condition) {other execution} else {final execution}
+    if ($var.Count -lt 10) {Write-Host "It's less than 10"} elseif ($var.Count -eq 10) {Write-Host "It's 10"} else {Write-Host "It's greather than 10"}
     ```
