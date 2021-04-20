@@ -289,3 +289,13 @@
         $var++
     }
     ```
+
+* Using FOR iterations:
+
+    ```powershell
+    # Example: common use
+    for ($var = 0; $var -lt 10; $var++)
+    {
+        Write-Host ("Number {0}" -f $var)
+    }
+    ```
