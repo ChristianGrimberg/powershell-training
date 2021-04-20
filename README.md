@@ -324,3 +324,11 @@
     # Example: Read argument by array id
     Write-Object ("Value of first argument: " -f $args[0])
     ```
+
+* Read user input:
+
+    ```powershell
+    # Example: common use
+    [int]$number = Read-Host -Prompt "What´s for favorite number? "
+    Write-Host ("Your favorite number is: {0}" -f $number)
+    ```
