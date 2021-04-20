@@ -299,3 +299,19 @@
         Write-Host ("Number {0}" -f $var)
     }
     ```
+
+* Using FOREACH and FOREACH-OBJECT iterations:
+
+    ```powershell
+    # Example: using foreach in common cases
+    $names = "Jenny", "Jack", "Tom"
+    foreach ($name in $names)
+    {
+        Write-Host ("Hi {0}!" -f $name)
+    }
+    # Example: using foreach-object in common cases
+    $names = "Jenny", "Jack", "Tom"
+    $names | ForEach-Object { Write-Host ("Hi {0}" -f $_)}
+    # Example: using foreach-object with objects
+    Get-ChildItem -Path ./ -Directory | ForEach-Object { Write-Host ("Folder Name: {0}" -f $_.Name)}
+    ```
