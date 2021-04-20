@@ -213,6 +213,10 @@
     $var.GetType()
     # Remove the variable
     Remove-Variable var
+    # Typed variables
+    [string]$name = "Joe"
+    [int]$age = 10
+    [object]$Items = Get-ChildItem -Path ./
     ```
 
 * Using Lists:
@@ -271,5 +275,17 @@
         "Carl*" {Write-Host "Carl is your name"; break} # break is optional
         "*Sagan" {Write-Host "Sagan is your last name"}
         default {Write-Host "Nice to meet you"}
+    }
+    ```
+
+* Using WHILE iterations:
+
+    ```powershell
+    # Example: common use
+    [int]$var = 1
+    while ($var -lt 10)
+    {
+        Write-Host $var
+        $var++
     }
     ```
