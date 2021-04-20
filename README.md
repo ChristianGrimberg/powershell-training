@@ -315,3 +315,12 @@
     # Example: using foreach-object with objects
     Get-ChildItem -Path ./ -Directory | ForEach-Object { Write-Host ("Folder Name: {0}" -f $_.Name)}
     ```
+
+* Using arguments:
+
+    ```powershell
+    # Example: Script content to print all the arguments
+    $args | ForEach-Object { Write-Host ("Value: {0}" -f $_)}
+    # Example: Read argument by array id
+    Write-Object ("Value of first argument: " -f $args[0])
+    ```
