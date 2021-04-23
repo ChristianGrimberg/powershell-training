@@ -2,6 +2,13 @@
 
 ## Basic CmdLets
 
+* Getting the version of PowerShell:
+
+    ```powershell
+    $PSVersionTable # Get info about PowerShell installation
+    $PSVersionTable.PSVersion # Get the specific version of PowerShell installation
+    ```
+
 * Getting help from all the Powershell CmdLets with __`Get-Help`__:
 
     ```powershell
