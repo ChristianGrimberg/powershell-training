@@ -54,7 +54,7 @@
     Remove-Module -Name azurerm # Removes the members of a module, such as cmdlets and functions
     ```
 
-* Managing files and folders:
+* List files and folders:
 
     ```powershell
     Get-ChildItem # Get a list of files and folders on current directory
@@ -81,7 +81,7 @@
 
 ## Managing Windows Operating System
 
-* Managing Operating System's Process:
+* Managing Windows Operating System's Process:
 
     ```powershell
     Get-Process # Get a entire list of running process in the operating system
@@ -122,7 +122,9 @@
 
     ```powershell
     Get-WmiObject -Class Win32_DiskDrive # Get info about a WMI Class
+    Get-WmiObject -Class Win32_LogicalDisk -Filter "DeviceID='C:'" | Select-Object -Property FreeSpace # Get the free space of specific partition letter
     Get-WmiObject -Class Win32_Bios | Select-Object * # List all objects from specific WMI Class
+    Get-WmiObject -Query "SELECT * FROM SoftwareLicensingService" | Select-Object -Property OA3xOriginalProductKey # Get the OEM Product Key
     ```
 
 ## Using object oriented sintax
@@ -144,6 +146,7 @@
 
     ```powershell
     # -eq: equal
+    # -ceq equal case sensitive
     # -ne: not equal
     # -gt: greater than
     # -lt: less than
