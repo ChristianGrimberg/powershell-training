@@ -342,3 +342,44 @@
     [int]$number = Read-Host -Prompt "What´s for favorite number? "
     Write-Host ("Your favorite number is: {0}" -f $number)
     ```
+
+* Using parameters into script:
+
+    ```powershell
+    # Example using one parameter
+    param (
+        [Parameter(Mandatory=$true)] # Optional: This parameter is mandatory to input
+        [string] # Optional: This parameter has case sensitive for the specific type
+        $Var = "Hello" # Optional: This parameter has default value
+    )
+
+    #Example using more than one parameter
+    param (
+        [string]
+        $Var1,
+        [int]
+        $Var2
+    )
+
+    # Example using a array list in the parameter
+    param (
+        [int[]]
+        $Var
+    )
+
+    # Example using help content in the script
+    <#
+    .SYNOPSIS
+        A simple description
+    .DESCRIPTION
+        A full description
+    .PARAMETER Number
+        A description of the parameter
+    .EXAMPLE
+        An example using this script
+    #>
+    param (
+        [int]
+        $Number
+    )
+    ```
