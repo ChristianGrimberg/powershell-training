@@ -220,11 +220,18 @@
     Get-Content -Path ./Services.txt
     ```
 
-* Export results to `` format:
+* Export results to `CSV` format:
 
     ```powershell
-    Get-Service | Export-CSV -FilePath ./Services.csv # Export to CSV with powershell format
-    Get-Service | Output-File -FilePath ./Services.txt -NoTypeInformation # Export to CSV without PowerShell format to read from other apps
+    Get-Service | Export-Csv -FilePath ./Services.csv # Export to CSV file with powershell format
+    Get-Service | Export-Csv -FilePath ./Services.csv -NoTypeInformation # Export to CSV file without PowerShell format to read from other apps
+    ```
+
+* Export results to `XML` format:
+
+    ```powershell
+    Get-Service |  Export-Clixml -FilePath ./Services.xml # Export to XML file
+    Import-Clixml -FilePath ./Services.xml # Import XML file to PowerShell
     ```
 
 ## Scripting with PowerShell
