@@ -211,6 +211,15 @@
     Get-ChildItem -Path ./ | Out-GridView -PassThru | Remove-Item # Remove selected item in graphical interface
     ```
 
+## Export data format
+
+* Export results to `TXT` format:
+
+    ```powershell
+    Get-Service | Output-File -FilePath ./Services.txt # Write a TXT file with the Service list in table format
+    Get-Content -Path ./Services.txt
+    ```
+
 ## Scripting with PowerShell
 
 * Using variables:
@@ -229,7 +238,7 @@
     [object]$Items = Get-ChildItem -Path ./
     ```
 
-* Using Lists:
+* Using Array Lists:
 
     ```powershell
     # Load lists into variables
