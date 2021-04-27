@@ -216,22 +216,28 @@
 * Export results to `TXT` format:
 
     ```powershell
-    Get-Service | Output-File -FilePath ./Services.txt # Write a TXT file with the Service list in table format
+    Get-Service | Out-File -Path ./Services.txt # Write a TXT file with the Service list in table format
     Get-Content -Path ./Services.txt
     ```
 
 * Export results to `CSV` format:
 
     ```powershell
-    Get-Service | Export-Csv -FilePath ./Services.csv # Export to CSV file with powershell format
-    Get-Service | Export-Csv -FilePath ./Services.csv -NoTypeInformation # Export to CSV file without PowerShell format to read from other apps
+    Get-Service | Export-Csv -Path ./Services.csv # Export to CSV file with powershell format
+    Get-Service | Export-Csv -Path ./Services.csv -NoTypeInformation # Export to CSV file without PowerShell format to read from other apps
     ```
 
 * Export results to `XML` format:
 
     ```powershell
-    Get-Service |  Export-Clixml -FilePath ./Services.xml # Export to XML file
-    Import-Clixml -FilePath ./Services.xml # Import XML file to PowerShell
+    Get-Service |  Export-Clixml -Path ./Services.xml # Export to XML file
+    Import-Clixml -Path ./Services.xml # Import XML file to PowerShell
+    ```
+
+* Compare data file content:
+
+    ```powershell
+    Compare-Object -ReferenceObject (Import-Clixml -Path ./Services.xml) -DifferenceObject (Get-Service) -Property DisplayName, Status
     ```
 
 ## Scripting with PowerShell
