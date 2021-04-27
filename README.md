@@ -220,6 +220,13 @@
     Get-Content -Path ./Services.txt
     ```
 
+* Export results to `` format:
+
+    ```powershell
+    Get-Service | Export-CSV -FilePath ./Services.csv # Export to CSV with powershell format
+    Get-Service | Output-File -FilePath ./Services.txt -NoTypeInformation # Export to CSV without PowerShell format to read from other apps
+    ```
+
 ## Scripting with PowerShell
 
 * Using variables:
