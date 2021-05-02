@@ -317,6 +317,20 @@
     [object]$Items = Get-ChildItem -Path ./
     ```
 
+* Variables best practices
+
+    ```powershell
+    <#
+    lowercase: All letters lowercase, no word separation
+    UPPERCASE: All letters capitals, no word separation
+    PascalCase: Capitalize the first letter of each word, no word separation
+    camelCase: Capitalize the first letter of each word except the fist, no word separation
+
+    GLOBAL VARIABLES: Use PascalCase
+    LOCAL VARAIABLES: Use camelCase
+    #>
+    ```
+
 * Using Array Lists:
 
     ```powershell
