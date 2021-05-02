@@ -249,6 +249,21 @@
 
 ## Scripting with PowerShell
 
+* Using comments:
+
+    ```powershell
+    # This a line comment
+
+    <#
+    This is
+    a multi-line
+    comment
+    #>
+
+    #region This is a region
+    #endregion
+    ```
+
 * Using variables:
 
     ```powershell
