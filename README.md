@@ -9,6 +9,16 @@
     $PSVersionTable.PSVersion # Get the specific version of PowerShell installation
     ```
 
+* CmdLets in PowerShell:
+
+    ```powershell
+    <#
+    # Example of a cmdlet
+    Do-Something
+    Verb-Noun
+    #>
+    ```
+
 * Getting help from all the Powershell CmdLets with __`Get-Help`__:
 
     ```powershell
