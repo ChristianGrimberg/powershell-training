@@ -364,7 +364,7 @@
 * Using FOREACH and FOREACH-OBJECT iterations:
 
     ```powershell
-    # Example: using foreach in common cases
+    # Example: using ForEach in common cases
     $names = "Jenny", "Jack", "Tom"
     foreach ($name in $names)
     {
@@ -375,6 +375,9 @@
     $names | ForEach-Object { Write-Host ("Hi {0}" -f $_)}
     # Example: using foreach-object with objects
     Get-ChildItem -Path ./ -Directory | ForEach-Object { Write-Host ("Folder Name: {0}" -f $_.Name)}
+
+    # Example: using ForEach in ine command
+    Get-Service -Name *web* | ForEach-Object {$_.start()}
     ```
 
 * Using arguments:
