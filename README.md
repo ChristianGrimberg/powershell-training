@@ -19,6 +19,17 @@
     #>
     ```
 
+* Verbs in PowerShell:
+
+    ```powershell
+    Get-Verb # Access to all verbs in powershell
+    ```
+
+    Verb | Alias Prefix | Group  | Description
+    :--- | :----------: | :----  | :----------
+    Add  | a            | Common | Adds a resource to a container or attaches an item to another item
+    Find | fd           | Common | Loks for an object in the container that is unknown, implied, optional or specified
+
 * Getting help from all the Powershell CmdLets with __`Get-Help`__:
 
     ```powershell
