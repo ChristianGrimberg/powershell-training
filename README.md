@@ -106,6 +106,12 @@
     New-Service -Name Test -BinaryPathName ./service.exe # Create a new service with a specific binary file
     ```
 
+* See the Windows Event Log:
+
+    ```powershell
+    Get-EventLog -LogName Security -EntryType Error -Newest 5 # See the first 5 Security Errors from Windows Event Log
+    ```
+
 * Working with Windows Registry:
 
     ```powershell
