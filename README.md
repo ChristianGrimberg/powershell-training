@@ -109,7 +109,7 @@
 * See the Windows Event Log:
 
     ```powershell
-    Get-EventLog -LogName Security -EntryType Error -Newest 5 # See the first 5 Security Errors from Windows Event Log
+    Get-EventLog -LogName System -EntryType Error -Newest 5 # See the first 5 Security Errors from Windows Event Log
     ```
 
 * Working with Windows Registry:
@@ -147,21 +147,6 @@
     ```
 
 ## Combine operations with CmdLets in PowerShell
-
-* Operators:
-
-    ```powershell
-    # -eq: equal
-    # -ceq equal case sensitive
-    # -ne: not equal
-    # -gt: greater than
-    # -lt: less than
-    # -like: like a
-    # -le: less or equal
-    # -ge: greater or equal
-    # -and: and
-    # -or: or
-    ```
 
 * Filtering and sorting the results using the pipeline:
     ```powershell
@@ -268,6 +253,52 @@
 
     #region This is a region
     #endregion
+    ```
+
+* Sintax operators:
+
+    ```powershell
+    # -eq: equal
+    # -ceq equal case sensitive
+    # -ne: not equal
+    # -gt: greater than
+    # -lt: less than
+    # -like: like a
+    # -le: less or equal
+    # -ge: greater or equal
+    # -and: and
+    # -or: or
+    ```
+
+* PowerShell Data Types:
+
+    ```powershell
+    # Secuence of UTF-16 code units
+    [String]
+    # Character as a UTF-16 code unit
+    [Char]
+    # 8-bit unsigned integer
+    [Byte]
+    # 32-bits signed integer
+    [Int]
+    # 64-bits signed integer
+    [Long]
+    # 128-bits decimal value
+    [Decimal]
+    # Single-precision 32-bits floating point number
+    [Single]
+    # Double-precision 64-bits floating point number
+    [Double]
+    # Boolean can be $True of $False
+    [Bool]
+    # .Net Class, which holds the combination of date and time
+    [DateTime]
+    # A XML-Object can be greatly used to store and load configuration data
+    [XML]
+    # An array of diferent objects
+    [Array]
+    # Hashtable is an associative array, which maps keys to values
+    [Hashtable]
     ```
 
 * Using variables:
