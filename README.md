@@ -9,27 +9,6 @@
     $PSVersionTable.PSVersion # Get the specific version of PowerShell installation
     ```
 
-* CmdLets in PowerShell:
-
-    ```powershell
-    <#
-    # Example of a cmdlet
-    Do-Something
-    Verb-Noun
-    #>
-    ```
-
-* Verbs in PowerShell:
-
-    ```powershell
-    Get-Verb # Access to all verbs in powershell
-    ```
-
-    Verb | Alias Prefix | Group  | Description
-    :--- | :----------: | :----  | :----------
-    Add  | a            | Common | Adds a resource to a container or attaches an item to another item
-    Find | fd           | Common | Loks for an object in the container that is unknown, implied, optional or specified
-
 * Getting help from all the Powershell CmdLets with __`Get-Help`__:
 
     ```powershell
@@ -127,12 +106,6 @@
     New-Service -Name Test -BinaryPathName ./service.exe # Create a new service with a specific binary file
     ```
 
-* See the Windows Event Log:
-
-    ```powershell
-    Get-EventLog -LogName System -EntryType Error -Newest 5 # See the first 5 Security Errors from Windows Event Log
-    ```
-
 * Working with Windows Registry:
 
     ```powershell
@@ -168,6 +141,25 @@
     ```
 
 ## Combine operations with CmdLets in PowerShell
+
+* Operators:
+    * Pipeline operator:
+
+        ```powershell
+        # Operator: | (ASCII 124)
+        # Each pipeline operator sends the results of the preceding command to the next command.
+        Command-1 | Command-2 | Command-3
+        ```
+
+    * Type operators:
+
+        Operator     | Meaning                  | Example                   | Description
+        :----------: | :----------------------- | :------------------------ | :----------
+        `-is`        | Compare types            | `64 -is [Int] # true`     | Validates if the type of the object on the left is the same as the one on the rigth.
+        `-isNot`     | Compare types (inverted) | `99 -isNot [Int] # false` | Validates if the type of the object on the left is not the same as the one on the right.
+        `as`         | Cast                     | `1000 -as [DateTime]`     | Converts the object on the left to the specific type.
+        `.GetType()` | Show type                | `([Int]"676").GetType()`  | Shows the .NET Function for every object. Retrieves the type of the object.
+
 
 * Filtering and sorting the results using the pipeline:
     ```powershell
@@ -261,67 +253,6 @@
 
 ## Scripting with PowerShell
 
-* Using comments:
-
-    ```powershell
-    # This a line comment
-
-    <#
-    This is
-    a multi-line
-    comment
-    #>
-
-    #region This is a region
-    #endregion
-    ```
-
-* Sintax operators:
-
-    ```powershell
-    # -eq: equal
-    # -ceq equal case sensitive
-    # -ne: not equal
-    # -gt: greater than
-    # -lt: less than
-    # -like: like a
-    # -le: less or equal
-    # -ge: greater or equal
-    # -and: and
-    # -or: or
-    ```
-
-* PowerShell Data Types:
-
-    ```powershell
-    # Secuence of UTF-16 code units
-    [String]
-    # Character as a UTF-16 code unit
-    [Char]
-    # 8-bit unsigned integer
-    [Byte]
-    # 32-bits signed integer
-    [Int]
-    # 64-bits signed integer
-    [Long]
-    # 128-bits decimal value
-    [Decimal]
-    # Single-precision 32-bits floating point number
-    [Single]
-    # Double-precision 64-bits floating point number
-    [Double]
-    # Boolean can be $True of $False
-    [Bool]
-    # .Net Class, which holds the combination of date and time
-    [DateTime]
-    # A XML-Object can be greatly used to store and load configuration data
-    [XML]
-    # An array of diferent objects
-    [Array]
-    # Hashtable is an associative array, which maps keys to values
-    [Hashtable]
-    ```
-
 * Using variables:
 
     ```powershell
@@ -336,20 +267,6 @@
     [string]$name = "Joe"
     [int]$age = 10
     [object]$Items = Get-ChildItem -Path ./
-    ```
-
-* Variables best practices
-
-    ```powershell
-    <#
-    lowercase: All letters lowercase, no word separation
-    UPPERCASE: All letters capitals, no word separation
-    PascalCase: Capitalize the first letter of each word, no word separation
-    camelCase: Capitalize the first letter of each word except the fist, no word separation
-
-    GLOBAL VARIABLES: Use PascalCase
-    LOCAL VARAIABLES: Use camelCase
-    #>
     ```
 
 * Using Array Lists:
@@ -436,7 +353,7 @@
 * Using FOREACH and FOREACH-OBJECT iterations:
 
     ```powershell
-    # Example: using ForEach in common cases
+    # Example: using foreach in common cases
     $names = "Jenny", "Jack", "Tom"
     foreach ($name in $names)
     {
@@ -447,9 +364,6 @@
     $names | ForEach-Object { Write-Host ("Hi {0}" -f $_)}
     # Example: using foreach-object with objects
     Get-ChildItem -Path ./ -Directory | ForEach-Object { Write-Host ("Folder Name: {0}" -f $_.Name)}
-
-    # Example: using ForEach in ine command
-    Get-Service -Name *web* | ForEach-Object {$_.start()}
     ```
 
 * Using arguments:
