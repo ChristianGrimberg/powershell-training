@@ -203,6 +203,16 @@
 
         > If the letter __`i`__ is added to the beginning of the comparison operator, means __explicity case insensitive__, and if the letter __`c`__ is added to the beginning of the comparison operator, means __explicity case sensitive__.
 
+    * Logical operators
+
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `-and`         | Combines two expressions with `AND`            | Returns `true` if both are true.
+        `-or`          | Combines two expressions with `OR`             | Returns `true` if one or both are true.
+        `-xor`         | Combines two expressions with `XOR`            | Returns `true` if one of the expressions is true and the other one is false.
+        `-not`         | Negate                                         | Negate the expression.
+        `!`            | Negate                                         | Negate the expression.
+
 * Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
