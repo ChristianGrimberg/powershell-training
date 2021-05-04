@@ -203,7 +203,7 @@
 
         > If the letter __`i`__ is added to the beginning of the comparison operator, means __explicity case insensitive__, and if the letter __`c`__ is added to the beginning of the comparison operator, means __explicity case sensitive__.
 
-    * Logical operators
+    * Logical operators:
 
         Operator       | Meaning                                        | Description
         :------------: | :--------------------------------------------- | :----------
@@ -212,6 +212,15 @@
         `-xor`         | Combines two expressions with `XOR`            | Returns `true` if one of the expressions is true and the other one is false.
         `-not`         | Negate                                         | Negate the expression.
         `!`            | Negate                                         | Negate the expression.
+
+    * Split and join operators:
+
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `-split`       | Split string                                   | Split strings and returns values as arrays.
+        `-join`        | Join strings                                   | Jopins strings with specific layouts together.
+
+        > If the letter __`i`__ is added to the beginning of the `split` operator, means __explicity case insensitive__, and if the letter __`c`__ is added to the beginning of the `split` operator, means __explicity case sensitive__.
 
 * Filtering and sorting the results using the pipeline:
     ```powershell
