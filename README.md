@@ -173,6 +173,17 @@
         `-shr`       | Shift-right              | Moves all bits _n_ places to the right.
         `()`         | Parentheses              | Mathematical predence order.
 
+    * Assignment operators:
+
+        Operator     | Meaning                  | Description
+        :----------: | :----------------------- | :----------
+        `=`          | Assign                   | Assigns the value on the right to the left one.
+        `+=`         | Add and assign           | Adds the right value to the left one and assigns it.
+        `-=`         | Subtract and assign      | Subtract the right value from the left one and assigns it.
+        `*=`         | Multiply and assign      | Multiplies the right value by the left one and assigns it.
+        `/=`         | Divide and assign        | Divides the right value by the left one and assigns it.
+        `%=`         | Modulo and assign        | Invokes a modulo between the right value and the left one and assigns it.
+
 * Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
