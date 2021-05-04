@@ -151,36 +151,57 @@
 
     * Type operators:
 
-        Operator     | Meaning                  | Example                   | Description
-        :----------: | :----------------------- | :------------------------ | :----------
-        `-is`        | Compare types            | `64 -is [Int] # true`     | Validates if the type of the object on the left is the same as the one on the rigth.
-        `-isNot`     | Compare types (inverted) | `99 -isNot [Int] # false` | Validates if the type of the object on the left is not the same as the one on the right.
-        `as`         | Cast                     | `1000 -as [DateTime]`     | Converts the object on the left to the specific type.
-        `.GetType()` | Show type                | `([Int]"676").GetType()`  | Shows the .NET Function for every object. Retrieves the type of the object.
+        Operator     | Meaning                  | Example                               | Description
+        :----------: | :----------------------- | :------------------------------------ | :----------
+        `-is`        | Compare types            | `64 -is [Int] # true`                 | Validates if the type of the object on the left is the same as the one on the rigth.
+        `-isNot`     | Compare types (inverted) | `99 -isNot [Int] # false`             | Validates if the type of the object on the left is not the same as the one on the right.
+        `as`         | Cast                     | `1000 -as [DateTime]`                 | Converts the object on the left to the specific type.
+        `.GetType()` | Show type                | `([Int]"676").GetType()`              | Shows the .NET Function for every object. Retrieves the type of the object.
 
     * Arithmetic operators:
 
-        Operator     | Meaning                  | Description
-        :----------: | :----------------------- | :----------
-        `+`          | Add                      | Adds numeric object.<br>Concetenates strings, arrays and hash tables.
-        `-`          | Subtract and negate      | Subtracts numeric values.<br>Negate numbers.
-        `*`          | Multiply                 | Multiplies numeric values.<br>Multiplies strings and arrays the specified number of times.
-        `/`          | Divide                   | Divides numeric objects with the specified number of times.
-        `%`          | Modulo                   | Returns the remainder of a division.
-        `-shl`       | Shift-left               | Moves all bits _n_ places to the left.
-        `-shr`       | Shift-right              | Moves all bits _n_ places to the right.
-        `()`         | Parentheses              | Mathematical predence order.
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `+`            | Add                                            | Adds numeric object.<br>Concetenates strings, arrays and hash tables.
+        `-`            | Subtract and negate                            | Subtracts numeric values.<br>Negate numbers.
+        `*`            | Multiply                                       | Multiplies numeric values.<br>Multiplies strings and arrays the specified number of times.
+        `/`            | Divide                                         | Divides numeric objects with the specified number of times.
+        `%`            | Modulo                                         | Returns the remainder of a division.
+        `-shl`         | Shift-left                                     | Moves all bits _n_ places to the left.
+        `-shr`         | Shift-right                                    | Moves all bits _n_ places to the right.
+        `()`           | Parentheses                                    | Mathematical predence order.
 
     * Assignment operators:
 
-        Operator     | Meaning                  | Description
-        :----------: | :----------------------- | :----------
-        `=`          | Assign                   | Assigns the value on the right to the left one.
-        `+=`         | Add and assign           | Adds the right value to the left one and assigns it.
-        `-=`         | Subtract and assign      | Subtract the right value from the left one and assigns it.
-        `*=`         | Multiply and assign      | Multiplies the right value by the left one and assigns it.
-        `/=`         | Divide and assign        | Divides the right value by the left one and assigns it.
-        `%=`         | Modulo and assign        | Invokes a modulo between the right value and the left one and assigns it.
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `=`            | Assign                                         | Assigns the value on the right to the left one.
+        `+=`           | Add and assign                                 | Adds the right value to the left one and assigns it.
+        `-=`           | Subtract and assign                            | Subtract the right value from the left one and assigns it.
+        `*=`           | Multiply and assign                            | Multiplies the right value by the left one and assigns it.
+        `/=`           | Divide and assign                              | Divides the right value by the left one and assigns it.
+        `%=`           | Modulo and assign                              | Invokes a modulo between the right value and the left one and assigns it.
+
+    * Comparison operators:
+
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `-eq`          | Equals                                         | Returns equality between left and right value.
+        `-ne`          | Not equal                                      | Returns equality negated.
+        `-gt`          | Greater-than                                   | Returns if left value is greater than right one.
+        `-ge`          | Greater-than or equal to                       | Returns if left value is greater than or equal to rigth one.
+        `-lt`          | Less-than                                      | Returns if left value is less than right one.
+        `-le`          | Less-than or equal to                          | Returns if left value is less than or equal to right one.
+        `-like`        | Matching a defined filter                      | Returns if left value is similar to right one, using a filter/wildcard.
+        `-notlike`     | Not matching a defined filter                  | Returns if left value is not similar to rigth one, using a filter/wildcard.
+        `-match`       | Matching a defined _RegEx_ filter              | Returns if left value is similar to rigth one, using _RegEx_.
+        `-notmatch`    | Not matching a defined _RegEx_ filter          | Returns if left value is not similar to right one, using _RegEx_.
+        `-contains`    | Collection containing an object                | Returns is left collection contains one object, same as the rigth one.
+        `-notcontains` | Collection not containing an object            | Returns is left collection does not contain one object, same as the right one.
+        `-in`          | Value is in a collection of refence values     | Returns is left object is included in collection on the right.
+        `-notin`       | Value is not in a collection of refence values | Returns is left object is not included in collection on the right.
+
+        > If the letter __`i`__ is added to the beginning of the comparison operator, means __explicity case insensitive__, and if the letter __`c`__ is added to the beginning of the comparison operator, means __explicity case sensitive__.
 
 * Filtering and sorting the results using the pipeline:
     ```powershell
