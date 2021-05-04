@@ -145,11 +145,9 @@
 * Operators:
     * Pipeline operator:
 
-        ```powershell
-        # Operator: | (ASCII 124)
-        # Each pipeline operator sends the results of the preceding command to the next command.
-        Command-1 | Command-2 | Command-3
-        ```
+        Operator     | Meaning                  | Example                               | Description
+        :----------: | :----------------------- | :------------------------------------ | :----------
+        `\|`         | Pipeline (ASCII 124)     | `Command-1 \| Command-2 \| Command-3` | Each pipeline operator sends the results of the preceding command to the next command.
 
     * Type operators:
 
