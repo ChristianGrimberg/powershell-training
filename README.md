@@ -160,6 +160,18 @@
         `as`         | Cast                     | `1000 -as [DateTime]`     | Converts the object on the left to the specific type.
         `.GetType()` | Show type                | `([Int]"676").GetType()`  | Shows the .NET Function for every object. Retrieves the type of the object.
 
+    * Arithmetic operators:
+
+        Operator     | Meaning                  | Description
+        :----------: | :----------------------- | :----------
+        `+`          | Add                      | Adds numeric object.<br>Concetenates strings, arrays and hash tables.
+        `-`          | Subtract and negate      | Subtracts numeric values.<br>Negate numbers.
+        `*`          | Multiply                 | Multiplies numeric values.<br>Multiplies strings and arrays the specified number of times.
+        `/`          | Divide                   | Divides numeric objects with the specified number of times.
+        `%`          | Modulo                   | Returns the remainder of a division.
+        `-shl`       | Shift-left               | Moves all bits _n_ places to the left.
+        `-shr`       | Shift-right              | Moves all bits _n_ places to the right.
+        `()`         | Parentheses              | Mathematical predence order.
 
 * Filtering and sorting the results using the pipeline:
     ```powershell
