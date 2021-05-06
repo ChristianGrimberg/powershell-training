@@ -222,6 +222,15 @@
 
         > If the letter __`i`__ is added to the beginning of the `split` operator, means __explicity case insensitive__, and if the letter __`c`__ is added to the beginning of the `split` operator, means __explicity case sensitive__.
 
+    * Bitwise logical operators:
+
+        Operator       | Meaning                                        | Description
+        :------------: | :--------------------------------------------- | :----------
+        `-band`        | Bitwise `AND`                                  | Returns the bitwise `AND` operation between left and right values.
+        `-bor`         | Bitwise `OR` inclusive                         | Returns the bitwise `OR` operation between left and rigth values.
+        `-bxor`        | Bitwise `OR` exclusive                         | Returns the bitwise `XOR` operation between left and rigth values.
+        `-bnot`        | Bitwise `NOT`                                  | Returns the bitwise `NOT` operation between left and rigth values.
+
 * Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
