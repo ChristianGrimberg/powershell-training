@@ -231,6 +231,12 @@
         `-bxor`        | Bitwise `OR` exclusive                         | Returns the bitwise `XOR` operation between left and rigth values.
         `-bnot`        | Bitwise `NOT`                                  | Returns the bitwise `NOT` operation between left and rigth values.
 
+    * Replace operator:
+
+        Operator     | Meaning                  | Example                                                   | Description
+        :----------: | :----------------------- | :-------------------------------------------------------- | :----------
+        `-replace`   | Replacement of strings   | `"Hello world" -replace "world", "human" # "Hello human"` | Allows for the systematic replacement of strings using regular expressions.
+
 * Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
