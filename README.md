@@ -407,6 +407,7 @@
         3 {Write-Host "Three"}
         default {Write-Host "Other number"} # Optional
     }
+    
     # Example: using wildcards
     $var = "Carl Sagan"
     switch -Wildcard ($var)
@@ -414,6 +415,15 @@
         "Carl*" {Write-Host "Carl is your name"; break} # break is optional
         "*Sagan" {Write-Host "Sagan is your last name"}
         default {Write-Host "Nice to meet you"}
+    }
+
+    # Example: using RegEx
+    $textNumber = "fourty two"
+    switch-Regex($textNumber)
+    {
+        1 {Write-Host "It is one"; break}
+        "*two*" {Write-Host "Contains two"; break}
+        "*teen" {"It less than twenty"; break}
     }
     ```
 
@@ -448,11 +458,12 @@
     {
         Write-Host ("Hi {0}!" -f $name)
     }
+
     # Example: using foreach-object in common cases
     $names = "Jenny", "Jack", "Tom"
-    $names | ForEach-Object { Write-Host ("Hi {0}" -f $_)}
+    $names | ForEach-Object {Write-Host ("Hi {0}" -f $_)}
     # Example: using foreach-object with objects
-    Get-ChildItem -Path ./ -Directory | ForEach-Object { Write-Host ("Folder Name: {0}" -f $_.Name)}
+    Get-ChildItem -Path ./ -Directory | ForEach-Object {Write-Host ("Folder Name: {0}" -f $_.Name)}
     ```
 
 * Using arguments:
@@ -478,14 +489,16 @@
 
     ```powershell
     # Example using one parameter
-    param (
+    param
+    (
         [Parameter(Mandatory=$true)] # Optional: This parameter is mandatory to input
         [String] # Optional: This parameter has case sensitive for the specific type
         $Var = "Hello" # Optional: This parameter has default value
     )
 
     #Example using more than one parameter
-    param (
+    param
+    (
         [String]
         $Var1,
         [Int]
@@ -493,7 +506,8 @@
     )
 
     # Example using a array list in the parameter
-    param (
+    param
+    (
         [Int[]]
         $Var
     )
@@ -509,7 +523,8 @@
     .EXAMPLE
         An example using this script
     #>
-    param (
+    param
+    (
         [Int]
         $Number
     )
