@@ -237,6 +237,16 @@
         :----------: | :----------------------- | :-------------------------------------------------------- | :----------
         `-replace`   | Replacement of strings   | `"Hello world" -replace "world", "human" # "Hello human"` | Allows for the systematic replacement of strings using regular expressions.
 
+    * Unary Operators:
+
+        ```powershell
+        $a = 1 # Initialize variable
+        $a++ # 2 -> Increment after
+        $a-- # 1 -> Decrement after
+        ++$a # 2 -> Increment before
+        --$a # 1 -> Decrement before
+        ```
+
 * Filtering and sorting the results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
