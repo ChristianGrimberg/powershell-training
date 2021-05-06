@@ -427,7 +427,19 @@
     }
     ```
 
-* Using WHILE iterations:
+* Using DO-WHILE loop:
+
+    ```powershell
+    # Example: common use
+    $a = 0
+    do
+    {
+        a++
+        $a
+    } while($a -lt 5)
+    ```
+
+* Using WHILE loop:
 
     ```powershell
     # Example: common use
@@ -439,7 +451,7 @@
     }
     ```
 
-* Using FOR iterations:
+* Using FOR loop:
 
     ```powershell
     # Example: common use
@@ -449,7 +461,7 @@
     }
     ```
 
-* Using FOREACH and FOREACH-OBJECT iterations:
+* Using FOREACH and FOREACH-OBJECT loops:
 
     ```powershell
     # Example: using foreach in common cases
