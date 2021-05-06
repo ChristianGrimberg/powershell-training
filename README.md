@@ -478,6 +478,27 @@
     Get-ChildItem -Path ./ -Directory | ForEach-Object {Write-Host ("Folder Name: {0}" -f $_.Name)}
     ```
 
+* Using BREAK and CONTINUE keywords in loops:
+
+    ```powershell
+    # Example: break will jump after the loop
+    $a = 0
+    do
+    {
+        $a++
+        $a
+        if($a -gt 2) {break}
+    } while($a -lt 5)
+
+    # Example: continue skip the current loop and jump to the loop header
+    $stringArray = "Pow", "er", "Shell", "42"
+    foreach($obj in $stringArray)
+    {
+        if($obj -like "*er*") {continue}
+        Write-Host $obj
+    }
+    ```
+
 * Using arguments:
 
     ```powershell
