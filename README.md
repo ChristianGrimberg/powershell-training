@@ -350,9 +350,9 @@
     # Remove the variable
     Remove-Variable var
     # Typed variables
-    [string]$name = "Joe"
-    [int]$age = 10
-    [object]$Items = Get-ChildItem -Path ./
+    [String]$name = "Joe"
+    [Int]$age = 10
+    [Object]$Items = Get-ChildItem -Path ./
     ```
 
 * Using Array Lists:
@@ -387,9 +387,12 @@
     if ($true) {Write-Host "This is a second test"}
     # Example 1: Indicate that there are less than 10 objects
     $var = Get-ChildItem -Path ./ | Measure-Object | Select-Object Count
-    if ($var.Count -lt 10) {Write-Host "It has less than 10 objects."}
+    if ($var.Count -lt 10)
+    {Write-Host "It has less than 10 objects."}
     # Sintax of IF/ELSEIF/ELSE statements: if (condition) {execution} elseif (other condition) {other execution} else {final execution}
-    if ($var.Count -lt 10) {Write-Host "It's less than 10"} elseif ($var.Count -eq 10) {Write-Host "It's 10"} else {Write-Host "It's greather than 10"}
+    if ($var.Count -lt 10) {Write-Host "It's less than 10"}
+    elseif ($var.Count -eq 10) {Write-Host "It's 10"}
+    else {Write-Host "It's greather than 10"}
     ```
 
 * Using SWITCH statements:
@@ -418,7 +421,7 @@
 
     ```powershell
     # Example: common use
-    [int]$var = 1
+    [Int]$var = 1
     while ($var -lt 10)
     {
         Write-Host $var
@@ -465,8 +468,10 @@
 
     ```powershell
     # Example: common use
-    [int]$number = Read-Host -Prompt "What´s for favorite number? "
+    [Int]$number = Read-Host -Prompt "What´s for favorite number?"
     Write-Host ("Your favorite number is: {0}" -f $number)
+    # Example: password input
+    [String]$password = Read-Host -Prompt "Password" -AsSecureString
     ```
 
 * Using parameters into script:
@@ -475,21 +480,21 @@
     # Example using one parameter
     param (
         [Parameter(Mandatory=$true)] # Optional: This parameter is mandatory to input
-        [string] # Optional: This parameter has case sensitive for the specific type
+        [String] # Optional: This parameter has case sensitive for the specific type
         $Var = "Hello" # Optional: This parameter has default value
     )
 
     #Example using more than one parameter
     param (
-        [string]
+        [String]
         $Var1,
-        [int]
+        [Int]
         $Var2
     )
 
     # Example using a array list in the parameter
     param (
-        [int[]]
+        [Int[]]
         $Var
     )
 
@@ -505,7 +510,7 @@
         An example using this script
     #>
     param (
-        [int]
+        [Int]
         $Number
     )
     ```
