@@ -585,3 +585,39 @@
         Write-Host "Always executed"
     }
     ```
+
+## Remoting
+
+* Enabling remoting on Windows:
+
+    ```powershell
+    Enter-PSRemoting
+    ```
+
+* Enabling remoting on Linux:
+
+    ```bash
+    # Debian and Ubuntu based distros
+    sudo apt-get update && sudo apt install -y gss-ntlmssp
+    ```
+
+    > Download the latest version of [Open Management Infrastructure](https://github.com/Microsoft/omi/releases)
+
+* Types of remoting:
+
+    * Interactive:
+
+        ```powershell
+        # Example: 1:1
+        Enter-PSSession -ComputerName Machine1
+        Get-Host
+        Exit-PSSession
+
+        # Example: 1:n
+        $pwshSessions = New-PSSession -ComputerName Machine1, Machine2, MachineN
+        Invoke-Command -Session $pwshSessions -ScriptBlock {$var = "value"}
+        Invoke-Command -Session $pwshSessions -ScriptBlock {Write-Host "$var is still a variable."}
+
+        # Example: Attemps to connect session and also retrieve data
+        Recieve-PSSession -ComputerName Machine1
+        ```
