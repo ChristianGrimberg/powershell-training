@@ -9,7 +9,7 @@
     $PSVersionTable.PSVersion # Get the specific version of PowerShell installation
     ```
 
-* Getting help from all the Powershell CmdLets with __`Get-Help`__:
+* Getting help from all CmdLets with __`Get-Help`__:
 
     ```powershell
     Update-Help # Update the command's helpers included in PowerShell
@@ -140,7 +140,7 @@
     $folder.CreationTime # For example, using a property of this object
     ```
 
-## Combine operations with CmdLets in PowerShell
+## Combine operations with CmdLets
 
 * Operators:
     * Pipeline operator:
@@ -247,7 +247,7 @@
         --$a # 1 -> Decrement before
         ```
 
-* Filtering and sorting the results using the pipeline:
+* Filtering and sorting results using the pipeline:
     ```powershell
     Get-ChildItem -Path ./ | Where-Object -Property Extension -like "*.txt" # Example filtering by extension
     Get-ChildItem -Path ./ | Sort-Object -Property Length # Example sorting in the specific path
@@ -337,7 +337,7 @@
     Compare-Object -ReferenceObject (Import-Clixml -Path ./Services.xml) -DifferenceObject (Get-Service) -Property DisplayName, Status
     ```
 
-## Scripting with PowerShell
+## Basic scripting
 
 * Using variables:
 
